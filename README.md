@@ -1,4 +1,4 @@
-# Android TechDotMusicPlayer: Music App
+# Android LoginSignup using: MVVM
 
 This repository contains a detailed sample app that demonstrates LoginSignup using MVVM Design Patterns, Retrofit, ViewModels, Navigation and Jetpack Components
 <p align="center">
