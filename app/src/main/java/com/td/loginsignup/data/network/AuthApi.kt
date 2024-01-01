@@ -9,12 +9,12 @@ import retrofit2.http.POST
  * Login API Request interface
  *
  */
-
 interface AuthApi {
-    @FormUrlEncoded
-    @POST("login")
-    suspend fun login(
-        @Field("email") email : String,
-        @Field("password") password: String
-    ): LoginResponse
+
+  @FormUrlEncoded
+  @POST("login")
+  suspend fun login(
+    @Field("email") email: String,
+    @Field("password") password: String
+  ) : LoginResponse
 }

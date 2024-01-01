@@ -9,12 +9,12 @@ plugins {
 
 android {
     namespace 'com.td.loginsignup'
-    compileSdk 32
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.td.loginsignup"
         minSdk 21
-        targetSdk 32
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -83,8 +83,6 @@ dependencies {
 
     implementation "com.google.dagger:hilt-android:2.44"
     kapt "com.google.dagger:hilt-compiler:2.44"
-
-
 
 
     testImplementation 'junit:junit:4.13.2'

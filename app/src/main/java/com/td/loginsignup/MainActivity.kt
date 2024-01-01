@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.lifecycleScope
+import com.example.mvvmtutorial.ui.home.HomeActivity
 import com.td.loginsignup.data.UserPreferences
+import com.td.loginsignup.ui.auth.AuthActivity
+import com.td.loginsignup.ui.startNewActivity
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {

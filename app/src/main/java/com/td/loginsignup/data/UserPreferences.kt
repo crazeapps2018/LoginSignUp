@@ -13,31 +13,33 @@ import kotlinx.coroutines.flow.first
  *
  * @property context Activity context
  */
-
 class UserPreferences(val context: Context) {
-    private val dataStore = context.createDataStore(name = "settings")
+  private val dataStore = context.createDataStore(name = "settings")
 
-    suspend fun getAuthToken():String? {
-        val dataStoreKey = preferencesKey<String>(ACCESS_TOKEN)
-        val preferences = dataStore.data.first()
-        return preferences[dataStoreKey]
-    }
+  suspend fun getAuthToken(): String? {
+    val dataStoreKey = preferencesKey<String>(ACCESS_TOKEN)
+    val preferences = dataStore.data.first()
+    return preferences[dataStoreKey]
+  }
 
-    suspend fun saveAuthToken(accessToken: String){
-        Log.d("UserPreferences", "Saving Auth Token: $accessToken")
-        val dataStoreKey = preferencesKey<String>(ACCESS_TOKEN)
-        dataStore.edit { settings ->
-            settings[dataStoreKey] = accessToken
-        }
-    }
+  suspend fun saveAuthToken(accessToken: String) {
+    Log.d("UserPreferences", "Saving Auth Token: $accessToken")
 
-    suspend fun clear() {
-        dataStore.edit { preferences ->
-            preferences.clear()
-        }
+    val dataStoreKey = preferencesKey<String>(ACCESS_TOKEN)
+    dataStore.edit { settings ->
+      settings[dataStoreKey] = accessToken
     }
+  }
 
-    companion object {
-        private val ACCESS_TOKEN = "key_auth"
+  suspend fun clear() {
+    dataStore.edit { preferences ->
+      preferences.clear()
     }
+  }
+
+  companion object {
+    private val ACCESS_TOKEN = "key_auth"
+
+  }
+
 }
